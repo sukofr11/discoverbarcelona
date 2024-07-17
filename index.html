@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover... Barcelona!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AYqLRwfYkcVyDG3iUWKNsrQhD6GzV5JEQFmWnnc",
+            authDomain: "discoverbarcelona-c6148.firebaseapp.com",
+            projectId: "discoverbarcelona-c6148",
+            storageBucket: "discoverbarcelona-c6148.appspot.com",
+            messagingSenderId: "43128044500",
+            appId: "1:43128044500:web:6a03b4052a700c19e97441",
+            measurementId: "G-MMSHV6M6JB"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        
+        // Attach db to window so it can be used in other scripts
+        window.db = db;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-app-pub-3940256099942544/9214589741"
+             data-ad-slot="9214589741"
+             data-ad-format="auto"></ins>
+             
+        <div id="loginScreen" class="content">
+            <h1>Register / Login to Discover... Barcelona!</h1>
+            <div id="loginForm">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button id="loginButton">Register / Login</button>
+            </div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+
+        <div id="startScreen" class="content hidden">
+            <img src="images/barcelona.jpg" alt="Discover Barcelona" class="start-image">
+            <h1>Welcome to Discover... Barcelona!</h1>
+            <p>Embark on an exciting journey to explore the city's most iconic landmarks. Solve fun and challenging puzzles to learn interesting facts about each location.</p>
+            <p>Are you ready to start your adventure?</p>
+            <button id="startButton">Start Game</button>
+        </div>
+        
+        <div id="gameScreen" class="content hidden">
+            <button id="homeButton" class="top-left">Home</button>
+            <h2 id="levelTitle"></h2>
+            <img id="levelImage" src="" alt="Monument Image" class="monument-image">
+            <p id="description"></p>
+            <p id="question"></p>
+            <input type="text" id="answer" placeholder="Your answer">
+            <button id="submitButton">Submit</button>
+            <button id="mapsButton" class="hidden bottom-right">Next Destination</button>
+            <p id="message"></p>
+        </div>
+
+        <div id="endScreen" class="content hidden">
+            <h1>Congratulations!</h1>
+            <p>You have completed all the levels of Discover... Barcelona!</p>
+            <p>We hope you enjoyed it. Stay tuned for the next adventure in the Discover... series!</p>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+
+    <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+    <script src="js/script.js" type="module"></script>
+</body>
+</html>
